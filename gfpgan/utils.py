@@ -140,6 +140,8 @@ class GFPGANer():
                 print(type(img))
                 if type(img) == str:
                     img2 = cv2.imread(img)
+                else:
+                    img2 = img
                 bg_img = self.bg_upsampler.enhance(img2, outscale=self.upscale)[0]
             else:
                 bg_img = None
